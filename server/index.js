@@ -74,9 +74,7 @@ app.use("/posts", postRoutes);
 //   })
 //   .catch((error) => console.log(`${error} did not connect`));
 
-const url =
-  process.env.MONGO_URL ||
-  "mongodb+srv://rsmathan2:vHa57MkSb3uh9e8c@cluster0.lmobqrc.mongodb.net/test?retryWrites=true&w=majority";
+const url = process.env.MONGO_URL;
 const PORT = process.env.PORT || 6001;
 
 mongoose
