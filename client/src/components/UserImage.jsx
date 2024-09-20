@@ -7,7 +7,7 @@ const UserImage = ({ image, size = "60px" }) => {
         style={{ objectFit: "cover", borderRadius: "50%" }}
         width="100%"
         height="100%"
-        src={`http://localhost:3001/assets/${image}`}
+        src={`https://socio-media-backend-teal.vercel.app/assets/${image}`}
         alt="user"
       />
     </Box>

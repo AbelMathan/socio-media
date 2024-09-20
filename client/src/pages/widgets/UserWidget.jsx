@@ -24,10 +24,13 @@ const UserWidget = ({ userId, picturePath }) => {
   const main = palette.neutral.main;
 
   const getUser = async () => {
-    const response = await fetch(`http://localhost:3001/user/${userId}`, {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = await fetch(
+      `https://socio-media-backend-teal.vercel.app/user/${userId}`,
+      {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     const data = await response.json();
     // console.log(data);
     setUser(data);

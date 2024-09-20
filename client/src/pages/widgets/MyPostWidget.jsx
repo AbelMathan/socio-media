@@ -67,13 +67,16 @@ const MyPostWidget = ({ picturePath }) => {
     }
 
     try {
-      const response = await fetch(`http://localhost:3001/posts`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: formData,
-      });
+      const response = await fetch(
+        `https://socio-media-backend-teal.vercel.app/posts`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        }
+      );
 
       if (response.ok) {
         const posts = await response.json();

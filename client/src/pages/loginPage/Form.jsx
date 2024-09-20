@@ -62,7 +62,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "http://localhost:3001/auth/register",
+      "https://socio-media-backend-teal.vercel.app/auth/register",
       { method: "POST", body: formData }
     );
     const savedUser = await savedUserResponse.json();
@@ -74,12 +74,15 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
-      method: "POST",
-      // body: formData,
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify(values),
-    });
+    const loggedInResponse = await fetch(
+      "https://socio-media-backend-teal.vercel.app/auth/login",
+      {
+        method: "POST",
+        // body: formData,
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(values),
+      }
+    );
 
     const loggedIn = await loggedInResponse.json();
     onSubmitProps.resetForm();

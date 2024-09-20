@@ -25,7 +25,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const patchFriend = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/user/${_id}/${friendId}`,
+        `https://socio-media-backend-teal.vercel.app/user/${_id}/${friendId}`,
         {
           method: "PATCH",
           headers: {
