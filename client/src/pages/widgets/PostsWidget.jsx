@@ -10,10 +10,13 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 
   const getPosts = async () => {
     try {
-      const response = await fetch("http://localhost:3001/posts", {
-        method: "GET",
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await fetch(
+        "https://socio-media-backend-teal.vercel.app/posts",
+        {
+          method: "GET",
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       if (!response.ok) throw new Error("Failed to fetch posts");
       const data = await response.json();
       dispatch(setPosts({ posts: data }));
